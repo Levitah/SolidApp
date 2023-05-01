@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78F84D50-2B57-4FCC-B80A-26941140BE38}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>SolidApp</RootNamespace>
-    <AssemblyName>SolidApp</AssemblyName>
+    <ProjectGuid>{D2DE65D5-953E-4E68-AEB3-22744E527236}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SolidApp.BLL</RootNamespace>
+    <AssemblyName>SolidApp.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,15 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Album\AlbumBLL.cs" />
+    <Compile Include="Album\Interfaces\IAlbumBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\SolidApp.DAL\SolidApp.DAL.csproj">
+      <Project>{f52ec1ba-c9fc-4f30-b7a7-6dad5fe2088f}</Project>
+      <Name>SolidApp.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SolidApp.Entity\SolidApp.Entity.csproj">
-      <Project>{11FC9F62-F32D-42B3-B0FA-7F442346C94B}</Project>
+      <Project>{11fc9f62-f32d-42b3-b0fa-7f442346c94b}</Project>
       <Name>SolidApp.Entity</Name>
     </ProjectReference>
   </ItemGroup>
