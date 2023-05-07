@@ -1,4 +1,4 @@
-﻿using SolidApp.Entity;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SolidApp.BLL.Album.Interfaces
@@ -7,6 +7,6 @@ namespace SolidApp.BLL.Album.Interfaces
     {
         void Save(Entity.Album album);
         IEnumerable<Entity.Album> ListAll();
-        Entity.Album FindById(int id);
+        Entity.Album FindById(string id);
     }
 }

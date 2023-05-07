@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace SolidApp.DAL.Interfaces
 {
-    public interface IRepository<T>
+    public interface IMongoBaseEntity
     {
-        void Save(T item);
-        IEnumerable<T> ListAll();
-        T FindById(string id);
+        Guid Id { get; }
     }
 }

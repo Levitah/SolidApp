@@ -16,7 +16,7 @@ namespace SolidApp.BLL.Album
             this.albumRepository = albumRepository;
         }
 
-        public Entity.Album FindById(int id)
+        public Entity.Album FindById(string id)
         {
             return albumRepository.FindById(id);
         }

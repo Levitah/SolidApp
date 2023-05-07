@@ -1,4 +1,5 @@
-﻿using SolidApp.Entity;
+﻿using SolidApp.BLL;
+using SolidApp.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,10 @@ namespace SolidApp
     {
         static void Main(string[] args)
         {
+            Services services = new Services();
+
             Album album = new Album("Tell me I'm Alive", "All Time Low", "Pop Punk", 2023);
+            services.albumBLL.Save(album);
         }
     }
 }

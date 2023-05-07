@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SolidApp.BLL\SolidApp.BLL.csproj">
+      <Project>{D2DE65D5-953E-4E68-AEB3-22744E527236}</Project>
+      <Name>SolidApp.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SolidApp.Entity\SolidApp.Entity.csproj">
       <Project>{11FC9F62-F32D-42B3-B0FA-7F442346C94B}</Project>
       <Name>SolidApp.Entity</Name>
