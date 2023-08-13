@@ -8,5 +8,6 @@ namespace SolidApp.BLL.Album.Interfaces
         void Save(Entity.Album album);
         IEnumerable<Entity.Album> ListAll();
         Entity.Album FindById(string id);
+        void DeleteById(string id);
     }
 }

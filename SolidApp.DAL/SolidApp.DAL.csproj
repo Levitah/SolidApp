@@ -150,7 +150,6 @@
   <ItemGroup>
     <Compile Include="Album\AlbumDAL.cs" />
     <Compile Include="Base\MongoBaseEntity.cs" />
-    <Compile Include="Base\SqlRepository.cs" />
     <Compile Include="Interfaces\IMongoBaseEntity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

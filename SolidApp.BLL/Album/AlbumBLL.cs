@@ -16,6 +16,11 @@ namespace SolidApp.BLL.Album
             this.albumRepository = albumRepository;
         }
 
+        public void DeleteById(string id)
+        {
+            this.albumRepository.DeleteById(id);
+        }
+
         public Entity.Album FindById(string id)
         {
             return albumRepository.FindById(id);

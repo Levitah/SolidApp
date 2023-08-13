@@ -34,14 +34,12 @@ namespace SolidApp.DAL.Base
 
         public void Save(T item)
         {
-            //if (GetIdValue(item) == Guid.Empty.ToString())
-            //    GetCollection().InsertOne(item);
-            //else
             GetCollection().ReplaceOne(Builders<T>.Filter.Eq(x => x.Id, item.Id), item, new ReplaceOptions() { IsUpsert = true });
+        }
 
-            //GetCollection().ReplaceOne(Builders<T>.Filter.Where(x => GetIdValue(x) == GetIdValue(x)).Eq(x => GetIdValue(x), GetIdValue(item)), item);
-
-            //GetCollection().ReplaceOne(Builders<T>.Filter.Where(x => GetIdValue(x) == GetIdValue(item)), item);
+        public void DeleteById(string id)
+        {
+            GetCollection().DeleteOne(Builders<T>.Filter.Eq(x => x.Id, id));
         }
 
         private MongoClient GetMongoClient()

@@ -11,5 +11,7 @@ namespace SolidApp.DAL.Interfaces
         void Save(T item);
         IEnumerable<T> ListAll();
         T FindById(string id);
+
+        void DeleteById(string id);
     }
 }

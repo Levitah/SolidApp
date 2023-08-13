@@ -15,9 +15,13 @@ namespace SolidApp.Entity
         public string Genre { get; private set; }
         public int Year { get; private set; }
 
-        public Album(string name, string artist, string genre, int year)
+        public Album(string name, string artist, string genre, int year) : this(Guid.NewGuid().ToString(), name, artist, genre, year)
         {
-            Id = Guid.NewGuid().ToString();
+        }
+
+        public Album(string id, string name, string artist, string genre, int year)
+        {
+            Id = id;
             Name = name;
             Artist = artist;
             Genre = genre;
