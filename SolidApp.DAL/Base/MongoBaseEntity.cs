@@ -8,6 +8,7 @@ namespace SolidApp.DAL.Base
 {
     public class MongoBaseEntity
     {
-        public Guid Id { get; set; }
+        private MongoDB.Bson.ObjectId _id;
+        public string Id { get { return _id.ToString(); } set { _id = MongoDB.Bson.ObjectId.Parse(value); } }
     }
 }
