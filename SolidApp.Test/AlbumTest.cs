@@ -3,6 +3,7 @@ using SolidApp.BLL;
 using SolidApp.BLL.Album;
 using SolidApp.Entity;
 using System;
+using System.Linq;
 
 namespace SolidApp.Test
 {
@@ -31,6 +32,21 @@ namespace SolidApp.Test
             CompareObjects(album, savedAlbum);
 
             services.albumBLL.DeleteById(album.Id);
+        }
+
+        [TestMethod]
+        public void FindAlbum()
+        {
+            int countBeforeSave = services.albumBLL.ListAll().Count();
+
+            Album album = new Album("La Drácula", "Jotta A", "Pop", 2023);
+            services.albumBLL.Save(album);
+
+            int countAfterSave = services.albumBLL.ListAll().Count();
+
+            services.albumBLL.DeleteById(album.Id);
+
+            Assert.AreEqual(countBeforeSave + 1, countAfterSave);
         }
 
         private void CompareObjects(Album album, Album savedAlbum)
