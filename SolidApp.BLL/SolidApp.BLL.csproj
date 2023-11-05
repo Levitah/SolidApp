@@ -44,9 +44,11 @@
     <Compile Include="Album\AlbumBLL.cs" />
     <Compile Include="Album\Interfaces\IAlbumBLL.cs" />
     <Compile Include="Album\Interfaces\ISongBLL.cs" />
+    <Compile Include="Album\Interfaces\ISongWithListByAlbumBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services.cs" />
     <Compile Include="Song\SongBLL.cs" />
+    <Compile Include="Song\SongWithListByAlbumBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SolidApp.DAL\SolidApp.DAL.csproj">

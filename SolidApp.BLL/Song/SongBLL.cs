@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SolidApp.BLL.Song
 {
-    internal class SongBLL : ISongBLL
+    internal class SongBLL : ISongWithListByAlbumBLL
     {
-        DAL.Interfaces.IRepository<Entity.Song> songRepository;
+        DAL.Interfaces.Song.ISongRepositoryWithListByAlbum<Entity.Song> songRepository;
 
-        public SongBLL(DAL.Interfaces.IRepository<Entity.Song> songRepository)
+        public SongBLL(DAL.Interfaces.Song.ISongRepositoryWithListByAlbum<Entity.Song> songRepository)
         {
             this.songRepository = songRepository;
         }
@@ -29,6 +29,11 @@ namespace SolidApp.BLL.Song
         public IEnumerable<Entity.Song> ListAll()
         {
             return songRepository.ListAll();
+        }
+
+        public IEnumerable<Entity.Song> ListByAlbum(string albumId)
+        {
+            return songRepository.ListByAlbum(albumId);
         }
 
         public void Save(Entity.Song song)

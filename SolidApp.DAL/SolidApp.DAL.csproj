@@ -152,6 +152,7 @@
     <Compile Include="Base\MongoBaseEntity.cs" />
     <Compile Include="Interfaces\IMongoBaseEntity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\Song\ISongRepositoryWithListByAlbum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\MongoRepository.cs" />
     <Compile Include="Song\SongDAL.cs" />

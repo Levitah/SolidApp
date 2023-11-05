@@ -2,6 +2,8 @@
 using SolidApp.BLL;
 using SolidApp.Entity;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SolidApp.Test
@@ -46,6 +48,34 @@ namespace SolidApp.Test
             services.songBLL.DeleteById(song.Id);
 
             Assert.AreEqual(countBeforeSave + 1, countAfterSave);
+        }
+
+        [TestMethod]
+        public void ListSongByAlbum()
+        {
+            string albumId = Guid.NewGuid().ToString();
+            string otherAlbumId = Guid.NewGuid().ToString();
+
+            Song songOne = new Song("Wiseman", 1, albumId);
+            Song songTwo = new Song("Alley Cat", 2, albumId);
+            Song songThree = new Song("Carry On", 2, otherAlbumId);
+
+            services.songBLL.Save(songOne);
+            services.songBLL.Save(songTwo);
+            services.songBLL.Save(songThree);
+
+            services.songBLL.ListAll();
+            IEnumerable<Song> songList = services.songBLL.ListByAlbum(albumId);
+            int albumQtd = songList.Count();
+
+            services.songBLL.DeleteById(songOne.Id);
+            services.songBLL.DeleteById(songTwo.Id);
+            services.songBLL.DeleteById(songThree.Id);
+
+            Assert.AreEqual(2, albumQtd);
+            Assert.IsTrue(songList.Any(x => x.Id.Equals(songOne.Id)));
+            Assert.IsTrue(songList.Any(x => x.Id.Equals(songTwo.Id)));
+            Assert.IsFalse(songList.Any(x => x.Id.Equals(songThree.Id)));
         }
 
         private void CompareObjects(Song song, Song savedSong)
