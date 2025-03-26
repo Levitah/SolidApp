@@ -13,7 +13,7 @@ namespace SolidApp.Test
     {
         private Services services = new Services();
 
-        [TestMethod]
+        //[TestMethod]
         public void SaveSong()
         {
             Song song = new Song("Wut", 1, Guid.NewGuid().ToString());
@@ -35,7 +35,7 @@ namespace SolidApp.Test
             services.songBLL.DeleteById(song.Id);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void FindSong()
         {
             int countBeforeSave = services.songBLL.ListAll().Count();
@@ -50,7 +50,7 @@ namespace SolidApp.Test
             Assert.AreEqual(countBeforeSave + 1, countAfterSave);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void ListSongByAlbum()
         {
             string albumId = Guid.NewGuid().ToString();

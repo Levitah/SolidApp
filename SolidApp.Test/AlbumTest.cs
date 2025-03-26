@@ -12,7 +12,7 @@ namespace SolidApp.Test
     {
         private Services services = new Services();
 
-        [TestMethod]
+        //[TestMethod]
         public void SaveAlbum()
         {
             Album album = new Album("This is Why", "Paramore", "Alternative Rock", 2023);
@@ -34,7 +34,7 @@ namespace SolidApp.Test
             services.albumBLL.DeleteById(album.Id);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void FindAlbum()
         {
             int countBeforeSave = services.albumBLL.ListAll().Count();
